@@ -117,14 +117,14 @@ log(67)
 
 // using interfaces which is recommended for Objects
 
-interface createInterface {
-    id: number,
+interface UserInterface {
+   readonly id: number, // setting readonly property to id to avoid mutation
     name: string,
     isLoggedIn: boolean,
     age? :number, //optional Chaining for not too important variables
 }
 
-const createAvatar:createInterface = {
+const createAvatar:UserInterface = {
 id: 1,
 name: 'Olalekan',
 isLoggedIn: false,
@@ -137,3 +137,85 @@ type point = number | string
 
 const P1: point = 1
 let p2: point = "Alhamdulillah"
+
+// interface for functions
+
+interface MathFunc{
+    (x: number, y: number):number;
+}
+
+const add: MathFunc = (x: number, y: number):number => x+y
+const sub: MathFunc = (x: number, y: number):number => x-y
+
+console.log(add(9,8), sub(32,8))
+
+// classes in typescript 
+
+class Person{
+    private id: number; // making private variables
+    protected name: string; // seting variable to protected
+
+    constructor(id: number, name: string){
+        console.log(123)
+        this.id =id;
+        this.name = name;
+    }
+    register(){ //function to demostrate how protected keyword is used as a local scope
+        return `${this.name} is now registered`
+    }
+    checkId(){
+     return `${this.id} is Verified`
+    }
+}
+
+const Mbk = new Person(12, 'Mustapha')
+const Shattry = new Person(16, 'Shattry')
+
+console.log(Mbk,Shattry)
+
+console.log(Shattry.register()) // will call the register function and pick its name
+
+console.log(Mbk.checkId())
+
+
+// Implementing interface with classes
+
+interface PersonInterface {
+     id: number, // setting readonly property to id to avoid mutation
+     name: string,
+     register():string
+     checkId():string
+ }
+
+ class Users implements PersonInterface { //using implements to add interface to classes
+    id: number;  
+    name: string;
+
+    constructor(id: number, name: string){
+        this.id =id;
+        this.name = name;
+    }
+    register(){ //function to demostrate how protected keyword is used as a local scope
+        return `${this.name} is now registered`
+    }
+    checkId(){
+     return `${this.id} is Verified`
+    }
+}
+
+//extending a class with extends keyword
+
+class Employee extends  Person{
+    position: string;
+
+    constructor(id:number, name: string , position: string){
+        super(id, name)
+        this.position =position;
+        
+    }
+}
+
+const newEmployee = new Employee(3, 'Jalasem' , "Senior Developer")
+
+console.log(newEmployee)
+console.log(newEmployee.register())
