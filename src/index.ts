@@ -101,3 +101,39 @@ let usersIds = uids as number
 usersIds = 89
 
 // Functions Type Assertion 
+
+function addNum(x:number , y:number):number{
+return x + y
+}
+console.log(addNum(6,7))
+
+//using Void and Union in Function
+
+function log(message:string |number) :void{
+    console.log(message)
+}
+log("Hello Mbk")
+log(67)
+
+// using interfaces which is recommended for Objects
+
+interface createInterface {
+    id: number,
+    name: string,
+    isLoggedIn: boolean,
+    age? :number, //optional Chaining for not too important variables
+}
+
+const createAvatar:createInterface = {
+id: 1,
+name: 'Olalekan',
+isLoggedIn: false,
+
+}
+
+//using Type for params and Unnions
+
+type point = number | string
+
+const P1: point = 1
+let p2: point = "Alhamdulillah"
