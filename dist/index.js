@@ -63,3 +63,20 @@ let uids = true;
 let usersIds = uids;
 usersIds = 89;
 // Functions Type Assertion 
+function addNum(x, y) {
+    return x + y;
+}
+console.log(addNum(6, 7));
+//using Void and Union in Function
+function log(message) {
+    console.log(message);
+}
+log("Hello Mbk");
+log(67);
+const createAvatar = {
+    id: 1,
+    name: 'Olalekan',
+    isLoggedIn: false,
+};
+const P1 = 1;
+let p2 = "Alhamdulillah";
