@@ -80,3 +80,47 @@ const createAvatar = {
 };
 const P1 = 1;
 let p2 = "Alhamdulillah";
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+console.log(add(9, 8), sub(32, 8));
+// classes in typescript 
+class Person {
+    constructor(id, name) {
+        console.log(123);
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+    checkId() {
+        return `${this.id} is Verified`;
+    }
+}
+const Mbk = new Person(12, 'Mustapha');
+const Shattry = new Person(16, 'Shattry');
+console.log(Mbk, Shattry);
+console.log(Shattry.register()); // will call the register function and pick its name
+console.log(Mbk.checkId());
+class Users {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+    checkId() {
+        return `${this.id} is Verified`;
+    }
+}
+//extending a class with extends keyword
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const newEmployee = new Employee(3, 'Jalasem', "Senior Developer");
+console.log(newEmployee);
+console.log(newEmployee.register());
