@@ -203,7 +203,7 @@ interface PersonInterface {
     }
 }
 
-//extending a class with extends keyword
+//extending a subclass with extends keyword
 
 class Employee extends  Person{
     position: string;
@@ -219,3 +219,14 @@ const newEmployee = new Employee(3, 'Jalasem' , "Senior Developer")
 
 console.log(newEmployee)
 console.log(newEmployee.register())
+
+
+//using Generics to create reusable components
+
+function getArray<T>(items:T[]):T[]{  // using the fragment type to declare reusable type based on call
+    return new Array().concat(items)
+}
+
+let numArray = getArray<number>([1,2,3,4,5,6,7])
+
+let strArray = getArray<string>(["Saka" , "Martinelli" ,'ESR'])

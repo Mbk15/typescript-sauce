@@ -114,7 +114,7 @@ class Users {
         return `${this.id} is Verified`;
     }
 }
-//extending a class with extends keyword
+//extending a subclass with extends keyword
 class Employee extends Person {
     constructor(id, name, position) {
         super(id, name);
@@ -124,3 +124,9 @@ class Employee extends Person {
 const newEmployee = new Employee(3, 'Jalasem', "Senior Developer");
 console.log(newEmployee);
 console.log(newEmployee.register());
+//using Generics to create reusable components
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4, 5, 6, 7]);
+let strArray = getArray(["Saka", "Martinelli", 'ESR']);
